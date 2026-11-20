@@ -1,25 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 278" font-family="Arial,sans-serif" font-size="16" fill="#233e49">
-<title>Double diaphragm gripping above a vented female tool</title>
-<defs>
- <marker id="load" markerWidth="5" markerHeight="5" refX="4.7" refY="2.5" orient="auto"><path fill="#ac481a" d="m0 0 5 2.5L0 5Z"/></marker>
- <pattern id="section" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#e3e9e8"/><path d="m0 8 8-8" stroke="#bcc8c7"/></pattern>
-</defs>
-<text x="20" y="24" fill="#853912">External pressure</text>
-<g fill="none" stroke="#ac481a" stroke-width="2.5" marker-end="url(#load)">
- <path d="M88 38v35"/><path d="M151 38v35"/><path d="M214 38v35"/><path d="M277 38v35"/>
- <path d="M88 156v-34"/><path d="M151 156v-34"/><path d="M214 156v-34"/><path d="M277 156v-34"/>
-</g>
-<path d="M30 92Q56 92 76 82H280Q299 82 316 92H337V104H316Q299 115 280 115H76Q55 104 30 104Z" fill="#e1eff0"/>
-<g fill="none" stroke="#08786f" stroke-width="4"><path d="M30 92Q56 92 76 82H280Q299 82 316 92H337"/><path d="M30 104Q55 104 76 115H280Q299 115 316 104H337"/></g>
-<path d="M74 98H282" stroke="#263e63" stroke-width="7"/><path d="M24 87h15v22H24z" fill="#596b70"/>
-<g stroke="#687f87" fill="none"><path d="m284 82 39-30h20"/><path d="m280 98 43-23h20"/><path d="m284 115 39 19h20"/><path d="M321 98h22"/></g>
-<g font-size="14"><text x="350" y="57">Upper diaphragm</text><text x="350" y="80">Blank</text><text x="350" y="103">Interlayer vacuum</text><text x="350" y="139">Lower diaphragm</text></g>
-<text x="20" y="179" fill="#853912">External pressure</text>
-<g fill="url(#section)" stroke="#637679" stroke-width="1.5">
- <path d="M23 190H97C139 190 154 221 188 225V248H23Z"/>
- <path d="M196 226Q240 231 284 226V248H196Z"/>
- <path d="M292 225C326 221 341 190 383 190H457V248H292Z"/>
-</g>
-<path d="M192 239v18h96v-18" fill="none" stroke="#50666f" stroke-width="1.3"/>
-<text x="240" y="275" text-anchor="middle" font-size="15">Tool-side vents</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 278" font-family="Arial,sans-serif" font-size="18" fill="#233e49">
+  <title>Double-diaphragm gripping above the left half of the female tool</title>
+  <desc>The two diaphragms grip the blank above the female cavity. All three layers and the mould terminate at the same vertical plane of symmetry. Opposing arrows show external pressure. The interlayer vacuum port and the tool vent are separate.</desc>
+  <defs>
+    <marker id="load" markerWidth="5" markerHeight="5" refX="4.7" refY="2.5" orient="auto"><path fill="#ac481a" d="m0 0 5 2.5L0 5Z"/></marker>
+    <pattern id="section" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#e3e9e8"/><path d="m0 8 8-8" stroke="#bcc8c7"/></pattern>
+  </defs>
+  <text x="22" y="24" fill="#853912">External pressure</text>
+  <g fill="none" stroke="#ac481a" stroke-width="2.5" marker-end="url(#load)">
+    <path d="M127 45v40"/><path d="M181 45v40"/><path d="M235 45v40"/><path d="M289 45v40"/>
+    <path d="M127 157v-40"/><path d="M181 157v-40"/><path d="M235 157v-40"/><path d="M289 157v-40"/>
+  </g>
+  <!-- All three layers stop at x=312, the same centre plane as the tool. -->
+  <g id="stack">
+    <path d="M22 93H68Q82 93 96 97H312V105H96Q82 109 68 109H22Z" fill="#daeeed"/>
+    <path d="M96 101H312" fill="none" stroke="#263e63" stroke-width="5"/>
+    <g fill="none" stroke="#08786f" stroke-width="3.5">
+      <path d="M22 93H68Q82 93 96 97H312"/>
+      <path d="M22 109H68Q82 109 96 105H312"/>
+    </g>
+    <path d="M32 87h22v9H32zM32 106h22v9H32z" fill="#596b70"/>
+  </g>
+  <path d="M48 101H14v34h14" fill="none" stroke="#526970" stroke-width="1.4"/>
+  <text x="32" y="141" font-size="17">Interlayer</text><text x="32" y="161" font-size="17">vacuum</text>
+  <g id="tool" fill="url(#section)" stroke="#637679" stroke-width="1.5">
+    <path d="M22 181H79C126 181 134 211 168 215V243H22Z"/>
+    <path d="M177 216C209 220 254 220 312 220V243H177Z"/>
+  </g>
+  <path d="M172 231v27h-17" fill="none" stroke="#526970" stroke-width="1.4"/>
+  <text x="148" y="265" text-anchor="end">Tool vent</text>
+  <path id="symmetry-axis" d="M312 34V249" fill="none" stroke="#475762" stroke-width="1.4" stroke-dasharray="10 3 2 3"/>
+  <text x="312" y="267" text-anchor="middle">Symmetry axis</text>
+  <g font-size="18">
+    <path d="M330 86h18" stroke="#08786f" stroke-width="3.5"/><text x="355" y="92">Diaphragms</text>
+    <path d="M330 117h18" stroke="#263e63" stroke-width="5"/><text x="355" y="123">Blank</text>
+    <rect x="330" y="141" width="18" height="12" fill="url(#section)" stroke="#637679"/><text x="355" y="154">Female tool</text>
+  </g>
 </svg>

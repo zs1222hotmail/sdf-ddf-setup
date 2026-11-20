@@ -436,3 +436,24 @@ address.contact-details a {width:fit-content;text-decoration:underline;text-unde
 .mode-card .media-enlarge, .mode-card .media-enlarge img { background:transparent; }
 .case-lead { display:grid; gap:12px; }
 .case-lead:has(img[src*="mould-"]) .media-enlarge { aspect-ratio:900/490; }
+#chapter-nav, #index-toggle { font-size:16px; }
+#chapter-count, #chapter-menu a span { font-size:14px; color:#53656d; }
+#chapter-menu { max-height:calc(100dvh - 92px); overflow-y:auto; }
+#chapter-menu a { align-items:baseline; font-size:18px; }
+.chapter-heading > .eyebrow, .contact-section > .eyebrow {
+  font-size:clamp(16px,1.45vw,22px);
+  font-weight:600;
+  letter-spacing:.055em;
+  color:#415760;
+}
+@media (min-width:761px) {
+  .chapter-heading { grid-template-columns:minmax(185px,22%) minmax(0,1fr); }
+}
+.quantity-legend { font-size:clamp(13px,1vw,15px); gap:6px 14px; color:#435861; }
+.quantity-legend i { width:8px; height:8px; }
+.schematic-bottom { flex-wrap:wrap; }
+.schematic-bottom > .mono { font-size:12px; }
+.content-figure figcaption, #overview-photos figcaption, #photo-viewer-caption {
+  font-size:clamp(14px,1.1vw,16px); line-height:1.5;
+}
+.content-figure figcaption strong { font-size:clamp(15px,1.2vw,18px); }
