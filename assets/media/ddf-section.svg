@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 278" font-family="Arial,sans-serif" font-size="17" fill="#203d49">
+<title>Double diaphragm blank gripping before tool-side evacuation</title>
+<defs><marker id="load" markerWidth="5" markerHeight="5" refX="4.6" refY="2.5" orient="auto"><path fill="#ac481a" d="M0 0 5 2.5 0 5Z"/></marker></defs>
+<rect width="480" height="278" fill="#f6f8f8"/>
+<text x="24" y="32" fill="#853912">External pressure</text>
+<g stroke="#ac481a" stroke-width="2.6" marker-end="url(#load)">
+<path d="M96 65v42"/><path d="M150 65v42"/><path d="M204 65v42"/><path d="M258 65v42"/>
+<path d="M96 220v-42"/><path d="M150 220v-42"/><path d="M204 220v-42"/><path d="M258 220v-42"/>
+</g>
+<path d="M31 139Q59 139 76 119H274Q291 119 312 139H337V148H312Q291 169 274 169H76Q59 149 31 149Z" fill="#e1eff0"/>
+<g fill="none" stroke="#08786f" stroke-width="4"><path d="M31 139Q59 139 76 119H274Q291 119 312 139H340"/><path d="M31 149Q59 149 76 169H274Q291 169 312 149H340"/></g>
+<rect x="24" y="135" width="16" height="18" rx="2" fill="#54656b"/><path d="M76 144H274" stroke="#263e63" stroke-width="8"/>
+<g stroke="#687f87" fill="none"><path d="M271 119l48-26h26"/><path d="M274 144l41-16h30"/><path d="M271 169l48 28h26"/><path d="M326 144h29"/></g>
+<text x="350" y="97">Upper film</text><text x="350" y="132">Blank</text><text x="350" y="201">Lower film</text>
+<text x="357" y="154" font-size="14">Vacuum</text><text x="357" y="171" font-size="14">connection</text>
+<text x="24" y="251" fill="#853912">External pressure</text>
+</svg>

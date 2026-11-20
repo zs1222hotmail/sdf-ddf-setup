@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 278" font-family="Arial,sans-serif" font-size="17" fill="#203d49">
+<title>Single diaphragm under forming pressure</title>
+<defs>
+ <marker id="load" markerWidth="5" markerHeight="5" refX="4.6" refY="2.5" orient="auto"><path fill="#ac481a" d="M0 0 5 2.5 0 5Z"/></marker>
+ <pattern id="section" width="9" height="9" patternUnits="userSpaceOnUse"><rect width="9" height="9" fill="#e4e9e9"/><path d="m0 9 9-9" stroke="#c2cccd"/></pattern>
+</defs>
+<rect width="480" height="278" fill="#f6f8f8"/>
+<text x="24" y="32" fill="#853912">Atmospheric pressure</text>
+<path d="M30 212H132C158 212 166 137 198 135H278C312 137 317 212 348 212H450V262H30Z" fill="url(#section)" stroke="#53676b" stroke-width="2"/>
+<path d="M39 177C110 190 141 189 173 151Q187 130 203 130H276Q292 130 307 151C340 189 368 190 441 177" fill="none" stroke="#08786f" stroke-width="4"/>
+<path d="M85 187Q142 201 177 155Q192 135 204 135H275Q290 135 303 155Q338 201 395 187" fill="none" stroke="#263e63" stroke-width="5"/>
+<g stroke="#ac481a" stroke-width="2.6" marker-end="url(#load)"><path d="M92 136v40"/><path d="m143 129 17 31"/><path d="M210 82v40"/><path d="M267 82v40"/><path d="m335 129-17 31"/><path d="M389 136v40"/></g>
+<g fill="#54656b"><path d="M25 169h24v18H25zM431 169h24v18h-24z"/></g>
+<text x="240" y="243" text-anchor="middle">Male tool</text>
+<path d="M91 201v31H49" fill="none" stroke="#52646a" stroke-width="1.3"/>
+<text x="35" y="253" font-size="14">Low pressure</text>
+<path d="M302 61h20" stroke="#08786f" stroke-width="4"/><text x="330" y="66">Diaphragm</text>
+<path d="M302 86h20" stroke="#263e63" stroke-width="5"/><text x="330" y="91">Blank</text>
+</svg>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f2f2ed">
+<meta name="description" content="Explore the DDF composite forming research platform: apparatus, process, measurement and research applications."><title>DDF — Research Platform</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+</head><body>
+<a class="skip-link" href="#setup">Skip to setup</a>
+<a class="project-mark" href="#overview" aria-label="SDF/DDF setup overview"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M2 12V2h10m8 0h10v10M30 20v10H20M12 30H2V20M10 10h12v12H10z" stroke="currentColor" stroke-width="1.5"/></svg><b>SDF/DDF setup</b><span>Bespoke research platform</span></a>
+<nav id="chapter-nav" aria-label="Chapter navigation" hidden><div class="nav-progress"><span></span></div><span id="chapter-count">01</span><span id="current-chapter">Setup</span><button id="index-toggle" aria-expanded="false" aria-controls="chapter-menu">Index <span>＋</span></button><div id="chapter-menu" hidden><a href="#overview"><span>00</span>Overview ↗</a><a href="#setup"><span>01</span>Setup</a><a href="#process"><span>02</span>Process</a><a href="#performance"><span>03</span>Performance</a><a href="#applications"><span>04</span>Applications</a><a href="#contact"><span>05</span>Contact</a></div></nav>
+<main>
+<section id="overview" class="hero" aria-labelledby="hero-title">
+ <div id="hero-media" class="hero-media" aria-label="Forming rig CAD">
+  <img class="hero-outline" src="assets/media/cad-rig.png" alt="Blender rendering of the complete apparatus CAD.">
+  <p id="overview-model-status" class="overview-model-status mono" role="status">Loading CAD model</p>
+ </div>
+ <div class="hero-side">
+  <div class="hero-copy"><h1 id="hero-title">Diaphragm forming</h1><p class="hero-description">A composite forming rig with four-axis positioning, infrared heating and vacuum control.</p><a class="text-link" href="#setup">Explore the six systems ↓</a></div>
+  <div id="overview-photos" aria-label="Laboratory photographs"></div>
+ </div>
+</section>
+<section id="setup" class="chapter setup-section" aria-labelledby="setup-title"><header class="chapter-heading" data-reveal><div class="eyebrow">01 / SETUP</div><div><h2 id="setup-title">One rig.<br>Six connected systems.</h2><p>Move from the complete assembly to the systems within it.<br>Select a system to understand its role and connections.</p></div></header>
+ <div id="setup-story" class="setup-scroll"><div class="setup-stage">
+  <div class="setup-toolbar"><div class="segmented" aria-label="Model arrangement"><button id="assembled-button" aria-pressed="true">Assembled</button><button id="exploded-button" aria-pressed="false">Exploded</button></div><span id="model-state" class="mono" aria-live="polite">ASSEMBLED VIEW</span><button id="story-toggle">Explore freely ↗</button></div>
+  <div class="setup-main" id="setup-main">
+   <div id="model-host" class="model-host">
+    <div id="setup-viewport" class="setup-viewport">
+     <img class="setup-outline" src="assets/media/cad-rig.png" alt="Blender rendering of the complete apparatus CAD.">
+     <div class="model-loader" role="status"><i></i>Loading display model</div>
+     <div id="model-hotspots" aria-label="Systems in the model"></div>
+    </div>
+    <div class="model-footer">
+     <span id="model-instruction">Scroll to separate the systems</span>
+     <div class="model-controls" aria-label="Model controls"><button id="rotate-left" aria-label="Rotate model left">↶</button><button id="rotate-right" aria-label="Rotate model right">↷</button><button id="zoom-in" aria-label="Zoom in">＋</button><button id="zoom-out" aria-label="Zoom out">−</button><button id="reset-view">Reset</button></div>
+    </div>
+   </div>
+   <svg id="system-links" class="system-links" aria-hidden="true"></svg>
+   <div class="setup-side">
+    <div id="system-selectors" class="system-selectors" role="group" aria-label="Select a system"></div>
+    <div id="system-panel" class="system-panel" hidden>
+     <div class="system-overline"><h3 id="system-title"></h3><button id="all-systems" type="button">Clear selection</button></div>
+     <p id="system-short"></p>
+     <dl id="system-description" aria-label="Component groups"></dl>
+     <div id="system-photo" class="media-slot"></div><p id="system-status" class="status-note"></p>
+    </div>
+   </div>
+  </div>
+  <div class="story-steps" aria-label="Setup story"><span class="active" data-story-step="0">01 — Assembled</span><span data-story-step="1">02 — Exploded</span><span data-story-step="2">03 — Explore systems</span></div>
+ </div></div><p class="section-footnote">The exploded view illustrates how the six systems fit together. Offsets are for display.</p>
+ <section class="hardware-gallery" aria-labelledby="rig-inside"><h3 id="rig-inside">Heating and temperature measurement</h3>
+ <div class="heat-layout"><div id="thermal-hardware"></div><div id="thermal-ui"></div></div></section>
+ <section class="hardware-gallery" aria-labelledby="qt-title"><h3 id="qt-title">Device communications</h3>
+ <div class="connection-layout"><div id="qt-screens"></div><dl class="qt-channels">
+ <dt>Position</dt><dd>The nRF52840 bridge sends four SSI height readings to the viewer and carries the common target back to the motion controller over Bluetooth LE (Nordic UART Service) or wired serial.</dd>
+ <dt>Temperature and pressure</dt><dd>The ESP32 sends eight infrared temperatures and two pressure readings over a separate Bluetooth LE or wired serial link.</dd>
+ <dt>Thermocouples</dt><dd>Two USB TC-08 loggers each acquire eight K-type thermocouples.</dd>
+ <dt>Heating</dt><dd>The viewer sends four heater duty settings to the controller over serial. The displayed settings are requested duty cycles.</dd></dl></div></section>
+</section>
+<section id="process" class="chapter process-section" aria-labelledby="process-title"><header class="chapter-heading" data-reveal><div class="eyebrow">02 / PROCESS</div><div><h2 id="process-title">From preparation<br>to forming.</h2><p>Compare single- and double-diaphragm forming, then follow the shared stages from setup to inspection.</p></div></header>
+ <div class="process-content" data-reveal><div id="forming-modes" class="forming-modes"></div>
+ <p class="mode-note">The rig accepts reusable silicone rubber diaphragms and consumable vacuum-bag film. The single- or double-diaphragm designation follows the number of active forming layers. The bag lay-up, seals and pressure sequence are specific to each trial.</p>
+ <div class="section-bar process-heading"><h3>Five stages of a forming trial</h3><span>Illustrative process</span></div><div id="process-tabs" class="process-tabs" role="tablist" aria-label="Process stages"></div>
+ <div id="process-panel" class="process-panel" role="tabpanel" aria-labelledby="stage-tab-preparation"><div class="schematic-area"><div class="schematic-top"><span class="mono">SINGLE-DIAPHRAGM SECTION</span><button id="play-schematic" aria-pressed="false">Play sequence ▷</button></div>
+ <img id="process-schematic" alt="Single-diaphragm forming section">
+ <div class="schematic-bottom"><div class="quantity-legend"><span><i class="temperature"></i>Temperature</span><span><i class="pressure"></i>Pressure</span><span><i class="displacement"></i>Displacement</span></div><span id="process-counter" class="mono">01 / 05</span></div></div>
+ <div class="process-copy"><span id="stage-name" class="eyebrow">Preparation</span><h3 id="stage-title"></h3><p id="stage-body"></p><dl><dt>Connected systems</dt><dd id="stage-modules"></dd><dt>Relevant quantities</dt><dd id="stage-quantity"></dd></dl><div id="stage-video" class="media-slot video-slot"></div></div></div></div>
+</section>
+<section id="performance" class="chapter performance-section" aria-labelledby="performance-title"><header class="chapter-heading" data-reveal><div class="eyebrow">03 / PERFORMANCE</div><div><h2 id="performance-title">Four-axis motion control</h2><p>Four screw drives move the diaphragm frames to a common height. A displacement sensor at each corner provides the feedback needed to keep the frames level.</p></div></header>
+ <div class="performance-content">
+ <section class="evidence-panel motion-method" aria-labelledby="motion-method-heading"><h3 id="motion-method-heading">Height tracking and differential levelling</h3>
+ <div id="feedback-diagram"></div>
+ <div class="loop-pair"><article><h4>Height tracking</h4><p>The controller averages the four measured heights and compares that mean with the target from the viewer. The proportional gain K<sub>p</sub> converts height error into a speed demand. The derivative gain K<sub>d</sub> damps the approach using measured vertical velocity.</p><div class="control-equation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>u</mi><mi mathvariant="normal">m</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">F</mi><mrow><mo>(</mo><msub><mi>e</mi><mi mathvariant="normal">m</mi></msub><mo>)</mo></mrow></mrow><mo>−</mo><msub><mi>K</mi><mi mathvariant="normal">d,z</mi></msub><mover accent="true"><mi>w</mi><mo>¯</mo></mover><mo>,</mo><mspace width="1em" /><msub><mi>u</mi><mi>i</mi></msub><mo>=</mo><mrow><mi mathvariant="normal">F</mi><mrow><mo>(</mo><mrow><msub><mi>e</mi><mi mathvariant="normal">m</mi></msub><mo>−</mo><msub><mi>δ</mi><mi>i</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>−</mo><msub><mi>K</mi><mi mathvariant="normal">d,z</mi></msub><msub><mi>w</mi><mi>i</mi></msub></mrow></math></div></article>
+ <article><h4>Differential levelling</h4><p>Each corner is compared with the mean height and mean velocity. A corner that runs ahead receives a slower command. A corner that lags receives a faster one. This correction reduces tilt while the frame moves.</p><div class="control-equation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>ℓ</mi><mi>i</mi></msub><mo>=</mo><mo>−</mo><mi>λ</mi><mrow><mo>(</mo><mrow><msub><mi>K</mi><mi mathvariant="normal">p,L</mi></msub><msub><mi>δ</mi><mi>i</mi></msub><mo>+</mo><msub><mi>K</mi><mi mathvariant="normal">d,L</mi></msub><mrow><mo>(</mo><mrow><msub><mi>w</mi><mi>i</mi></msub><mo>−</mo><mover accent="true"><mi>w</mi><mo>¯</mo></mover></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow></mrow></math></div></article></div>
+ <p class="evidence-copy">In the simulated controller, each drive receives the average of the common and corner-specific tracking demands, plus its levelling correction. The controller limits the resulting speed and converts it to motor steps.</p>
+ <div class="control-equation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow xmlns="http://www.w3.org/1998/Math/MathML"><mtext>Tracking: </mtext><msubsup><mi>v</mi><mi>i</mi><mo>*</mo></msubsup><mo>=</mo><mfrac><mrow><msub><mi>u</mi><mi mathvariant="normal">m</mi></msub><mo>+</mo><msub><mi>u</mi><mi>i</mi></msub></mrow><mn>2</mn></mfrac><mo>+</mo><msub><mi>ℓ</mi><mi>i</mi></msub><mo>,</mo><mspace width="1em" /><msub><mi>v</mi><mi>i</mi></msub><mo>=</mo><msub><mi>Q</mi><mi mathvariant="normal">sat</mi></msub><mrow><mo>(</mo><msubsup><mi>v</mi><mi>i</mi><mo>*</mo></msubsup><mo>)</mo></mrow></mrow></math></div><div class="control-equation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow xmlns="http://www.w3.org/1998/Math/MathML"><mover accent="true"><mi>z</mi><mo>¯</mo></mover><mo>=</mo><mfrac><mrow><msub><mi>z</mi><mn>1</mn></msub><mo>+</mo><msub><mi>z</mi><mn>2</mn></msub><mo>+</mo><msub><mi>z</mi><mn>3</mn></msub><mo>+</mo><msub><mi>z</mi><mn>4</mn></msub></mrow><mn>4</mn></mfrac><mo>,</mo><mspace width=".6em" /><msub><mi>e</mi><mi mathvariant="normal">m</mi></msub><mo>=</mo><msub><mi>z</mi><mi mathvariant="normal">c</mi></msub><mo>−</mo><mover accent="true"><mi>z</mi><mo>¯</mo></mover><mo>,</mo><mspace width=".6em" /><msub><mi>δ</mi><mi>i</mi></msub><mo>=</mo><msub><mi>z</mi><mi>i</mi></msub><mo>−</mo><mover accent="true"><mi>z</mi><mo>¯</mo></mover></mrow></math></div>
+ <p class="evidence-copy">Here z is height and w is vertical velocity. An overbar denotes the four-corner mean. The reference height is z<sub>c</sub>. The proportional map F(e) clips K<sub>p,z</sub>e to the speed limit, and λ scales the levelling correction with corner spread and distance to the target. Q<sub>sat</sub> limits and quantises the combined velocity.</p>
+ <div class="table-scroll"><table><caption>Proportional and derivative gains used in the motion simulation</caption><thead><tr><th>Mode</th><th>Height K<sub>p</sub> (s⁻¹)</th><th>Height K<sub>d</sub></th><th>Levelling K<sub>p</sub> (s⁻¹)</th><th>Levelling K<sub>d</sub></th></tr></thead>
+ <tbody><tr><th scope="row">Target tracking</th><td>7.0</td><td>0.6</td><td>7.0</td><td>0.6</td></tr><tr><th scope="row">Level recovery</th><td>6.0</td><td>0.6</td><td>12.0</td><td>1.5</td></tr></tbody></table></div>
+ <p class="evidence-copy">During recovery, the reference height stays at the mean measured on entry. Stronger differential gains bring the corners together. Once the difference between the highest and lowest corners stays below 0.35 mm for 0.20 s, the reference ramps towards the requested height. During tracking, a spread above 0.80 mm triggers recovery again.</p>
+ </section>
+ <section class="evidence-panel" aria-labelledby="mujoco-heading">
+  <div class="section-bar"><h3 id="mujoco-heading">Control algorithm simulation and parameter optimisation</h3><span class="status-pill">MOTION SIMULATION</span></div>
+  <p class="evidence-copy tuning-result">For a 200 mm move starting with a 100 mm difference between corners, tuning reduced the final absolute mean-height error from 186.24 to 0.48 mm and the final corner spread from 0.185 to 0.035 mm. The tuned controller settled in 13.77 s.</p>
+  <div class="simulation-layout"><div id="mujoco-figure"></div><div class="evidence-copy">
+   <p>The MuJoCo study tunes the balance between levelling and travel speed. Recovery prioritises corner alignment. As the frame approaches its target, the controller reduces the speed demand to limit overshoot. Twenty simulations tested a 200 mm upward move from initial corner spreads of 86.2–214.2 mm, with 100 ms sensor delay and 10 ms actuator delay.</p>
+   <dl class="result-list"><dt>Runs converged by 40 s</dt><dd>20 / 20</dd><dt>Mean settling time</dt><dd>24.07 s</dd><dt>Largest final corner spread</dt><dd>0.086 mm</dd><dt>Largest absolute final mean error</dt><dd>0.477 mm</dd></dl>
+   <p>A run met the settling criterion when corner spread was at most 0.30 mm and absolute mean-height error was at most 1.00 mm.</p>
+  </div></div>
+  <details class="evidence-details"><summary>View all 20 simulation cases</summary><div class="table-scroll" tabindex="0" role="region" aria-label="Results for twenty simulated moves"><table><thead><tr><th scope="col">Case</th><th scope="col">Initial spread (mm)</th><th scope="col">Final spread (mm)</th><th scope="col">Final mean error (mm)</th><th scope="col">Settling (s)</th><th scope="col">Mode switches</th><th scope="col">Converged</th></tr></thead><tbody id="mujoco-cases"></tbody></table></div></details>
+ </section>
+ <section class="evidence-panel" aria-labelledby="fe-heading">
+  <div class="section-bar"><h3 id="fe-heading">Silicone diaphragm forming in Abaqus</h3><span class="status-pill">FINITE-ELEMENT SIMULATION</span></div>
+  <p class="evidence-copy">Two silicone diaphragms press a composite blank into the capsule-shaped cavity. The contours show the predicted vertical displacement and contact pressure after 3 s of forming. Displacement at the rim exceeded the model’s acceptance criterion, which limits interpretation near the clamp.</p>
+  <div id="fe-figures" class="figure-grid"></div>
+ </section>
+ </div>
+</section>
+<section id="applications" class="chapter applications-section" aria-labelledby="applications-title"><header class="chapter-heading" data-reveal><div class="eyebrow">04 / APPLICATIONS</div><div><h2 id="applications-title">Formed parts<br>and tooling.</h2><p>Surface scans quantify deformation in a formed composite coupon and dimensional accuracy in a separate female tool.</p></div></header><div id="application-grid" class="application-grid" data-reveal></div></section>
+<section id="contact" class="chapter contact-section" aria-labelledby="contact-title"><div class="eyebrow" data-reveal>05 / CONTACT</div><div class="contact-layout" data-reveal><h2 id="contact-title">Research enquiries.</h2><div><p>For conversations about the apparatus, experimental methods and research collaboration.</p><address class="contact-details"><strong>Zhengquan Shen</strong><a href="mailto:z.shen22@imperial.ac.uk">z.shen22@imperial.ac.uk</a><a href="mailto:zs1222.qqq@outlook.com">zs1222.qqq@outlook.com</a></address></div></div></section>
+</main>
+<dialog id="photo-viewer" aria-labelledby="photo-viewer-caption">
+ <form method="dialog"><button type="submit" aria-label="Close enlarged image" autofocus>Close ×</button></form>
+ <img id="photo-viewer-image" alt="">
+ <p id="photo-viewer-caption"></p>
+</dialog>
+<footer><a href="#overview" class="footer-mark">DDF<span>RESEARCH PLATFORM</span></a><span>Composite forming research</span><a href="#overview">Back to top ↑</a></footer><noscript><p class="noscript-note">Enable JavaScript to explore the display model, process stages and motion control study.</p></noscript>
+</body></html>
