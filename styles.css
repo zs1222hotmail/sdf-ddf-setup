@@ -457,3 +457,20 @@ address.contact-details a {width:fit-content;text-decoration:underline;text-unde
   font-size:clamp(14px,1.1vw,16px); line-height:1.5;
 }
 .content-figure figcaption strong { font-size:clamp(15px,1.2vw,18px); }
+address.contact-details { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px clamp(16px,2.5vw,40px); }
+.contact-person { display:grid; align-content:start; justify-items:start; gap:6px; min-width:0; line-height:1.45; }
+.contact-person strong { font-weight:600; }
+.contact-person span { color:#435861; }
+.contact-person a { max-width:100%; overflow-wrap:anywhere; }
+@media (min-width:761px) {
+  .contact-layout { grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr); gap:5%; }
+}
+@media (max-width:560px) {
+  address.contact-details { grid-template-columns:1fr; }
+}
+#process-panel:is([data-stage="preparation"],[data-stage="thermal"],[data-stage="holding"]) .video-slot .media-enlarge {
+  height:auto; background:transparent;
+}
+#process-panel:is([data-stage="preparation"],[data-stage="thermal"],[data-stage="holding"]) .video-slot img {
+  height:auto; max-height:440px; object-fit:contain;
+}
