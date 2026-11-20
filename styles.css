@@ -429,3 +429,10 @@
 .loop-pair article {min-width:0}
 address.contact-details {display:grid;gap:9px;font-style:normal}
 address.contact-details a {width:fit-content;text-decoration:underline;text-underline-offset:3px}
+#explode-frames { position:absolute; inset:0; }
+.model-host:not(.free) .setup-viewport canvas { display:none !important; }
+.model-host.free .setup-viewport canvas { display:block; }
+.model-host.free #explode-frames { display:none; }
+.mode-card .media-enlarge, .mode-card .media-enlarge img { background:transparent; }
+.case-lead { display:grid; gap:12px; }
+.case-lead:has(img[src*="mould-"]) .media-enlarge { aspect-ratio:900/490; }
