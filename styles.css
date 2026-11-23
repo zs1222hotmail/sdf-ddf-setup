@@ -145,6 +145,8 @@
 .evidence-copy { max-width: 900px; }
 .evidence-figure { max-width: 900px; margin: 16px auto 0; }
 .simulation-layout { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); align-items: start; }
+.simulation-media { display: grid; gap: 24px; min-width: 0; }
+.simulation-media video { display: block; width: 100%; aspect-ratio: 16 / 9; }
 .evidence-copy > p:first-child { margin-top: 0; }
 .result-list {
   display: grid;

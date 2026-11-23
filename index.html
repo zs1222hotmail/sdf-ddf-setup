@@ -79,7 +79,10 @@
  <section class="evidence-panel" aria-labelledby="mujoco-heading">
   <div class="section-bar"><h3 id="mujoco-heading">Control algorithm simulation and parameter optimisation</h3><span class="status-pill">MOTION SIMULATION</span></div>
   <p class="evidence-copy tuning-result">For a 200 mm move starting with a 100 mm difference between corners, tuning reduced the final absolute mean-height error from 186.24 to 0.48 mm and the final corner spread from 0.185 to 0.035 mm. The tuned controller settled in 13.77 s.</p>
-  <div class="simulation-layout"><div id="mujoco-figure"></div><div class="evidence-copy">
+  <div class="simulation-layout"><div class="simulation-media">
+   <div id="mujoco-figure"></div>
+   <figure class="content-figure"><div id="levelling-player"></div><figcaption id="levelling-caption"></figcaption></figure>
+  </div><div class="evidence-copy">
    <p>The MuJoCo study tunes the balance between levelling and travel speed. Recovery prioritises corner alignment. As the frame approaches its target, the controller reduces the speed demand to limit overshoot. Twenty simulations tested a 200 mm upward move from initial corner spreads of 86.2–214.2 mm, with 100 ms sensor delay and 10 ms actuator delay.</p>
    <dl class="result-list"><dt>Runs converged by 40 s</dt><dd>20 / 20</dd><dt>Mean settling time</dt><dd>24.07 s</dd><dt>Largest final corner spread</dt><dd>0.086 mm</dd><dt>Largest absolute final mean error</dt><dd>0.477 mm</dd></dl>
    <p>A run met the settling criterion when corner spread was at most 0.30 mm and absolute mean-height error was at most 1.00 mm.</p>
